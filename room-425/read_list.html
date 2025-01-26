@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <link rel="icon" href="images/icon.png" sizes="800x600" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表 - 肆贰伍室</title>
+    <style>
+        body {
+            font-family: Helvetica, Tahoma, Arial, "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
+            background-image: url('images/background_1.jpg');  
+            background-size: cover;
+            background-attachment: fixed; 
+            backdrop-filter: blur(2px); 
+            margin: 0; 
+            height: 100%; 
+            display: flex;
+            flex-direction: column;
+            color: #ffffff; 
+        }
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #282828;
+            color: white;
+            padding: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #007BFF;
+        }
+        .container {
+            padding: 20px;
+            flex: 1;
+
+        }
+        .article {
+            background-color: #494949;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .article h2,
+        .article p {
+            color: #ffffff;
+            margin: 10px 0;
+        }
+        .read-more-button {
+            display: inline-block;
+            background-color: #636363fa;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            opacity: 0.9;
+        }
+        .read-more-button:hover {
+            opacity: 1;
+        }
+        footer {
+            background-color: #1e1e1e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        #back-to-top {
+            display: none; 
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #444;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>列表</h1>
+</header>
+
+<nav>
+    <a href="index.html">首页</a>
+    <a href="articles.html">内容</a>
+</nav>
+
+<div class="container">
+
+    <div class="article">
+        <h2>羊脂球</h2>
+        <p>法-莫泊桑 译-张英伦</p>
+        <button class="read-more-button" onclick="location.href='read_2.html?article=羊脂球.md'">阅读更多</button>
+    </div>
+
+</div>
+
+<footer>
+    <p>版权所有 © 2024 W.G.</p>
+</footer>
+
+<button id="back-to-top" title="返回顶部">↑</button>
+
+<script>
+    window.onscroll = function() {
+        const backToTopButton = document.getElementById("back-to-top");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    };
+
+    document.getElementById("back-to-top").onclick = function() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    };
+</script>
+
+</body>
+</html>
