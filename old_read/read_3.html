@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <link rel="icon" href="https://s2.loli.net/2024/07/25/oerm6OiKjyZwtRH.png" sizes="800x600" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章阅读 - 肆贰伍室</title>
+    <style>
+        @font-face {
+            font-family: "思源宋体 SemiBold";font-weight: 600;src: url("//at.alicdn.com/wf/webfont/7ioMBgwnRJH8/g7of5vSX5CHB.woff2") format("woff2"),
+            url("//at.alicdn.com/wf/webfont/7ioMBgwnRJH8/TIth9FfEST9N.woff") format("woff");
+            font-display: swap;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: '华文中宋', sans-serif;
+            display: flex;
+            flex-direction: column;
+            background-color: #282c34; /* 暗色背景 */
+            color: #ffffff; /* 文字颜色 */
+        }
+        .bg-image {
+            background-image: url('https://s2.loli.net/2024/08/12/ZmduYIlkUMFnVTH.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            flex: 1;
+        }
+        .overlay {
+            background: rgba(40, 44, 52, 0.9); /* 半透明覆盖层 */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: #343a40; /* 暗色背景 */
+            padding: 20px;
+            text-align: center; /* 居中对齐 */
+            border-radius: 10px; /* 圆角 */
+        }
+        .header {
+            font-size: 32px; /* 标题字体大小 */
+            color: #ffffff;
+            text-align: center;
+            font-weight: bold; /* 加粗 */
+            margin-bottom: 20px; /* 标题与内容间距 */
+        }
+        .nav-tabs {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .nav-tabs a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            transition: color 0.3s; /* 过渡效果 */
+        }
+        .nav-tabs a:hover {
+            color: #007BFF; /* 鼠标悬停颜色 */
+        }
+        .article-content {
+            padding: 20px;
+            text-align: left; /* 文章内容左对齐 */
+            background: #343a40; /* 暗色背景 */
+            margin: auto; /* 居中对齐 */
+            width: 80%; /* 设置宽度 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 添加阴影 */
+            border-radius: 10px; /* 圆角 */
+            font-size: 18px; /* 调整字体大小 */
+            line-height: 1.8; /* 行高 */
+            flex: 1;
+        }
+		pre {
+    		background: #495057; /* 代码块背景 */
+    		padding: 10px;
+    		border-radius: 5px;
+    		overflow: auto;
+		}
+
+		code {
+    		font-family: 'Courier New', Courier, monospace; /* 代码字体 */
+    		font-size: 16px;
+    		color: #e83e8c; /* 代码文字颜色 */
+		}
+
+		blockquote {
+    		font-size: 1.2em;
+    		color:  #e6e6e6;
+    		border-left: 4px solid #f2f2f2;
+    		padding-left: 20px;
+    		margin: 20px 0;
+		}
+
+		/* 段落之间的间距 */
+		p {
+    		margin-bottom: 16px; /* 或者您可以根据需要设置具体的像素值，如16px */
+		}
+
+		/* 用于渲染空行的样式 */
+		.empty-line {
+    		height: 30px; /* 根据需要调整空行的高度 */
+    		display: block; /* 使得空行在文档流中占据空间 */
+		}
+        
+        .footer {
+            background-color: #212529;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto; /* 页脚固定在底部 */
+        }
+        .customize-options {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .customize-options label {
+            margin-right: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="js/dark.min.css">
+    <script src="js/highlight.min.js"></script>
+    <script src="js/marked.min.js"></script>
+</head>
+<body>
+
+<div class="bg-image">
+    <div class="overlay">
+        <div class="header">Room - 425</div>
+        <div class="nav-tabs">
+            <a href="index.html">首页</a>
+            <a href="articles.html">返回列表</a>
+        </div>
+        <div class="customize-options">
+            <label for="font-select">选择字体：</label>
+            <select id="font-select" onchange="customizeFont()">
+                <option value="'华文中宋', sans-serif">华文中宋</option>
+                <option value="Arial, sans-serif, serif">Arial</option>
+                <option value="'Microsoft YaHei', sans-serif, serif">Microsoft YaHei</option>
+                <option value="'Tahoma', sans-serif, serif">Tahoma</option>
+                <option value="'SimSun', sans-serif, serif">SimSun</option>
+                <option value="'Times New Roman', sans-serif, serif">Times New Roman</option>
+            </select>
+            <label for="font-size">文字大小：</label>
+            <input type="number" id="font-size" value="18" onchange="customizeFont()" /> px
+        </div>
+        <div id="markdown-content" class="article-content">
+            <!-- 文章内容将由JavaScript加载 -->
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>版权所有 © 2024 W.G.</p>
+</div>
+
+<script>
+    // 获取URL参数
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+function preprocess(markdown) {
+    // 使用正则表达式匹配两个连续换行符，并将其替换为一个可识别的标记
+    return markdown.replace(/\n{3,}/g, '<p class="empty-line"></p>\n\n');
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const article = getQueryParam('article') || 'ERROR.md';
+    
+    // 加载Markdown文件并转换为HTML
+    fetch(article)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.text();
+        })
+        .then(text => {
+            // 使用preprocess函数处理Markdown文本
+            const content = marked(preprocess(text));
+            document.getElementById('markdown-content').innerHTML = content;
+            // 初始化代码高亮
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        })
+        .catch(error => console.error('Error fetching the Markdown file:', error));
+});
+
+    // 自定义字体和文字大小
+    function customizeFont() {
+        const fontSelect = document.getElementById('font-select').value;
+        const fontSize = document.getElementById('font-size').value + 'px';
+        document.body.style.fontFamily = fontSelect;
+        document.querySelectorAll('.article-content').forEach(function(element) {
+            element.style.fontSize = fontSize;
+        });
+    }
+</script>
+
+</body>
+</html>
