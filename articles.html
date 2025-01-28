@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <link rel="icon" href="images/icon.png" sizes="800x600" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表 - 肆贰伍室</title>
+    <style>
+        @font-face {
+            font-family: "Pingfang";
+            font-weight: 400;
+            src: url("css/pingfang.woff2") format("woff2"),
+            font-display: swap;
+        }
+        body {
+            font-family: "Pingfang", Arial, Helvetica, sans-serif;
+            background-image: url('images/header.jpg');  
+            background-size: cover;
+            background-attachment: fixed; 
+            backdrop-filter: blur(2px); 
+            margin: 0; 
+            height: 100%; 
+            display: flex;
+            flex-direction: column;
+            color: #ffffff; 
+        }
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #282828;
+            color: white;
+            padding: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #007BFF;
+        }
+        .container {
+            padding: 20px;
+            flex: 1;
+
+        }
+        .article {
+            background-color: #494949;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .article h2,
+        .article p {
+            color: #ffffff;
+            margin: 10px 0;
+        }
+        .read-more-button {
+            display: inline-block;
+            background-color: #636363fa;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            opacity: 0.9;
+        }
+        .read-more-button:hover {
+            opacity: 1;
+        }
+        footer {
+            background-color: #1e1e1e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        #back-to-top {
+            display: none; 
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #444;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>列表</h1>
+</header>
+
+<nav>
+    <a href="index.html">首页</a>
+    <a href="articles.html">内容</a>
+</nav>
+
+<div class="container">
+
+    <div class="article">
+        <h2>所在世</h2>
+        <p>2025-1，初二，1298字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/所在世.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>她</h2>
+        <p>2024-12，初二，这天周五，3015字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/她.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>海</h2>
+        <p>2024-12，初二，考场，834字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/海.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>之后 -第二章-</h2>
+        <p>2024-11，初二，2086字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/之后_第二章.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>之后 -第一章-</h2>
+        <p>2024-11，初二，3689字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/之后_第一章.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>温度</h2>
+        <p>2024-12，初二，1285字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/温度.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>记梦</h2>
+        <p>2024-10，初二，梦里，877字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/记梦.md'">阅读更多</button>
+    </div>
+	
+    <div class="article">
+        <h2>早生贵子</h2>
+        <p>2024-10，初二，笑话一则，460字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/早生贵子.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>《人工智能简史》读后笔记</h2>
+        <p>2024-10，初二，笔记而已，2575字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/《人工智能简史》 读后笔记.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>班会</h2>
+        <p>2024-9，初二，一次晚自习上，虚构小说，2641字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/班会.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>晨曦</h2>
+        <p>2024-9，初二，深夜里，698字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/晨曦.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>之、后</h2>
+        <p>2024-8，初二，在那之后，虚构小说，2769字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/之、后.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>8月信息素养大赛后感</h2>
+        <p>2024-8-20，初二，327字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/8月信息素养大赛 后感.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>桐乡 印象小记</h2>
+        <p>2024-8-20，初一，376字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/江南桐乡印象小记.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>汽车，自行车 —— 撞击。</h2>
+        <p>2024-6，初一，暮下书案，839字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/汽车,自行车--撞击.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>康乃馨</h2>
+        <p>2024-5，初一，习作课作，730字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/康乃馨.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>应季花儿</h2>
+        <p>2024-7-10，初一，考场，921字。12月初重写。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/应季花儿.md'">阅读更多</button>
+    </div>
+
+    <div class="article">
+        <h2>谁的负重？</h2>
+        <p>2024-4，初一，长大以后，883字。</p>
+        <button class="read-more-button" onclick="location.href='read.html?article=articles/谁的负重_2.md'">阅读更多</button>
+    </div>
+
+</div>
+
+<footer>
+    <p>版权所有 © 2024 W.G.</p>
+</footer>
+
+<button id="back-to-top" title="返回顶部">↑</button>
+
+<script>
+    window.onscroll = function() {
+        const backToTopButton = document.getElementById("back-to-top");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    };
+
+    document.getElementById("back-to-top").onclick = function() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    };
+</script>
+
+</body>
+</html>

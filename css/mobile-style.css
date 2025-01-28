@@ -1,0 +1,255 @@
+@charset 'UTF-8';
+
+@import url('https://chinese-fonts-cdn.deno.dev/packages/syst/dist/SourceHanSerifCN/result.css');
+
+@font-face {
+    font-family: 'pingfang';
+    src: url('css/pingfang.woff2') format('woff2'),
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 全局变量 */
+:root {
+    --primary-color: #222;
+    --secondary-color: #333;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --link-color: #fff;
+    --hover-color: #555;
+    --border-color: #f8f4f4;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --font-size: 16px;
+    --line-height: 1.6;
+    --padding-base: 15px;
+    --padding-large: 20px;
+    --margin-base: 15px;
+    --margin-large: 20px;
+    --border-radius: 5px;
+    --box-shadow: 0 0 10px var(--shadow-color);
+    --background-image: url('header.jpg'); /* 添加背景图片路径 */
+}
+
+/* 移动端全局样式 */
+body {
+    font-family: 'pingfang', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: var(--background-image); /* 使用背景图片 */
+    background-size: cover; /* 背景图片覆盖整个页面 */
+    background-position: center; /* 背景图片居中 */
+    background-attachment: fixed; /* 背景图片固定，滚动时不会移动 */
+    color: var(--text-color);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+}
+
+/* 导航栏 */
+#header {
+    padding: var(--padding-large) 0;
+    text-align: center;
+}
+
+#header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header nav ul li {
+    margin: 0 var(--padding-base);
+    position: relative;
+    white-space: nowrap; /* 防止文字换行 */
+}
+
+#header nav ul li::before {
+    content: '';
+    position: absolute;
+    left: -50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1px;
+    height: 15px;
+    background: var(--link-color);
+    display: none; /* 默认不显示 */
+}
+
+#header nav ul li:not(:first-child)::before {
+    display: block; /* 为非第一个元素显示分割线 */
+}
+
+#header nav ul li a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 18px;
+    transition: text-decoration 0.3s;
+    display: block; /* 使链接块级化，方便对齐 */
+    padding: 0.5em 0; /* 添加内边距，提升点击区域 */
+}
+
+#header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 容器 */
+.container {
+    padding: var(--padding-base);
+}
+
+/* 标题和副标题 */
+h1 {
+    font-family: 'Source Han Serif CN VF';
+    color: var(--link-color);
+    font-size: 7ch;
+    margin: 0 0 var(--margin-base);
+}
+
+h2 {
+    font-family: 'Source Han Serif CN VF';
+    color: #333 ;
+    margin: 0 0 var(--margin-base);
+}
+
+h3, h4, h5, h6 {
+    color: #f5f5f5 ;
+    margin: 0 0 var(--margin-base);
+}
+
+blockquote {
+    font-family: 'Source Han Serif CN VF';
+    color: #777;
+    font-style: italic;
+    text-align: center;
+}
+
+/* 按钮 */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: var(--link-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size);
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: var(--hover-color);
+}
+
+/* 图片 */
+.image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: var(--margin-base);
+}
+
+/* 特色部分 */
+#featured {
+    background: #fff;
+    padding: var(--padding-large);
+    margin: var(--margin-base) 0;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+#featured header {
+    text-align: center;
+}
+
+#featured .row {
+    display: flex;
+    flex-direction: column;
+}
+
+#featured .row section {
+    margin-bottom: var(--margin-base);
+}
+
+/* 主内容区 */
+#main {
+    background: #fff;
+    padding: var(--padding-large);
+    margin: var(--margin-base) 0;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+#main .row {
+    display: flex;
+    flex-direction: column;
+}
+
+#main .row section {
+    margin-bottom: var(--margin-base);
+}
+
+/* 底部 */
+#footer {
+    background: var(--secondary-color);
+    color: var(--link-color);
+    text-align: center;
+    padding: var(--padding-base) 0;
+    margin-top: var(--margin-base);
+}
+
+#footer section {
+    margin-bottom: 10px;
+}
+
+/* 版权信息 */
+.copyright {
+    text-align: center;
+    padding: 10px 0;
+    background: var(--primary-color);
+    color: var(--link-color);
+    font-size: 14px;
+}
+
+.copyright a {
+    text-decoration: none;
+    color: #80BA8E;
+    transition: text-decoration 0.3s;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (min-width: 768px) {
+    #header nav ul {
+        justify-content: space-between;
+    }
+
+    #header nav ul li {
+        margin: 0 var(--padding-large);
+    }
+
+    .container {
+        padding: var(--padding-large);
+    }
+
+    #featured .row, #main .row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--margin-base);
+    }
+
+    #featured .row section, #main .row section {
+        width: 50%;
+    }
+}
